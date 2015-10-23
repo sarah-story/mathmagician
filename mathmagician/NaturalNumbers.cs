@@ -9,7 +9,7 @@ namespace mathmagician
 {
     public class NaturalNumbers
     {
-        private int first;
+        protected int first;
 
         public NaturalNumbers()
         {
@@ -21,7 +21,7 @@ namespace mathmagician
             return first;
         }
 
-        public int GetNext(int x)
+        public virtual int GetNext(int x)
         {
             return x+1;
         }

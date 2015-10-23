@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace mathmagician
 {
-    public class EvenNumbers
+    public class EvenNumbers : NaturalNumbers
     {
+        public EvenNumbers()
+        {
+            first = 2;
+        }
 
+        public override int GetNext(int x)
+        {
+            return base.GetNext(x+1);
+        }
     }
 }

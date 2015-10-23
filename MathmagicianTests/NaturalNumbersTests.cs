@@ -44,7 +44,7 @@ namespace MathmagicianTests
         }
 
         [TestMethod]
-        public void ShouldPrintSequenceOfNumbers()
+        public void ShouldPrintVariableSequenceOfNumbers()
         {
             NaturalNumbers nats = new NaturalNumbers();
             int input = 8;
