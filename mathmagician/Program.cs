@@ -10,25 +10,33 @@ namespace mathmagician
     {
         static void Main(string[] args)
         {
-            string prompt = "> ";
-            Console.WriteLine("What do you want me to do?");
-            Console.Write(prompt);
+            Console.WriteLine("What do you want me to do? (Natural Numbers, Even Numbers, Odd Numbers, Fibonacci Numbers, or Prime Numbers)");
+            Console.Write("> ");
             string input = Console.ReadLine();
             if (input.ToLower().Equals("natural numbers"))
             {
-                Console.WriteLine("How many?");
-                Console.Write(prompt);
-                string response_length = Console.ReadLine();
-                int length;
-                bool parsed = int.TryParse(response_length, out length);
-                if (parsed)
-                {
-                    NaturalNumbers nats = new NaturalNumbers();
-                    Console.WriteLine(nats.ToString(nats.GetSequence(length)));
-                } else
-                {
-                    Console.WriteLine("Whoops!");
-                }
+                Ouput<NaturalNumbers> nats = new Ouput<NaturalNumbers>();
+                nats.CheckInput();
+            }
+            else if (input.ToLower().Equals("even numbers"))
+            {
+                Ouput<EvenNumbers> even = new Ouput<EvenNumbers>();
+                even.CheckInput();
+            }
+            else if (input.ToLower().Equals("odd numbers"))
+            {
+                Ouput<OddNumbers> odd = new Ouput<OddNumbers>();
+                odd.CheckInput();
+            }
+            else if (input.ToLower().Equals("fibonacci numbers"))
+            {
+                Ouput<FibonacciNumbers> fib = new Ouput<FibonacciNumbers>();
+                fib.CheckInput();
+            }
+            else if (input.ToLower().Equals("prime numbers"))
+            {
+                Ouput<PrimeNumbers> prime = new Ouput<PrimeNumbers>();
+                prime.CheckInput();
             }
             else
             {
